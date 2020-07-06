@@ -1,6 +1,6 @@
 const getMealBtn = document.querySelector("#gen_meal");
 const mealContainer = document.querySelector(".meal");
-const container = document.querySelector(".container");
+const containerEl = document.querySelector(".container");
 
 getMealBtn.addEventListener("click", () => {
   fetch("https://www.themealdb.com/api/json/v1/1/random.php")
@@ -8,7 +8,7 @@ getMealBtn.addEventListener("click", () => {
     .then((res) => {
       createMeal(res.meals[0]);
     });
-  container.style.textAlign = "left";
+  containerEl.style.textAlign = "left";
 });
 
 function createMeal(meal) {
